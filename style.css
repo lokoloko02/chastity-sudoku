@@ -21,3 +21,10 @@ body { font-family: sans-serif; text-align: center; }
 #board td.given { background:#eee; font-weight:bold; cursor:default; }
 #board td.invalid { background:#ffcccc; }
 button { padding: 8px 14px; font-size: 16px; }
+/* ─── Líneas gruesas para separar los 3×3 ─── */
+#board tr:nth-child(3n)  td { border-bottom: 3px solid #000; }   /* cada 3 filas */
+#board tr:first-child    td { border-top:    3px solid #000; }   /* borde superior */
+
+#board td:nth-child(3n)  { border-right:  3px solid #000; }      /* cada 3 columnas */
+#board td:first-child    { border-left:   3px solid #000; }      /* borde izquierdo */
+
