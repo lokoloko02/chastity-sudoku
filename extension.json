@@ -1,0 +1,24 @@
+{
+  "name":        "Chastity Sudoku",
+  "id":          "io.github.lokoloko02.chastitysudoku",
+  "description": "Solve a Sudoku before the clues disappear – or your lock gets longer.",
+  "version":     "0.1.0",
+  "author":      "lokoloko02",
+  "homepage_url":"https://lokoloko02.github.io/chastity-sudoku/index.html",
+  "icon_url":    "https://lokoloko02.github.io/chastity-sudoku/icon.svg",
+
+  "modes": [{
+    "id": "play",
+    "name": "Play Sudoku",
+    "entrypoint_url": "https://lokoloko02.github.io/chastity-sudoku/index.html",
+    "frequency": { "type": "ON_DEMAND" }
+  }],
+
+  "permissions": {
+    "timer": {
+      "add_time":   true,
+      "remove_time":true,
+      "freeze":     false
+    }
+  }
+}
