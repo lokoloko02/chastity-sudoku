@@ -1,13 +1,20 @@
 // Simple backtracking Sudoku generator ⇢ one unique solution.
 // Not optimized but fine for demo.
+// Very tiny generator – good enough for demo.
 
-export function generate() {
+export function generate(level = 'med') {
   const grid = Array(81).fill(0);
   fill(0, grid);
   const solution = grid.slice();
-  removeNumbers(grid, 51);         // leave ±30 clues
+
+  // how many numbers to *remove* based on difficulty
+  const holes = { ez: 36, med: 51, hard: 57 }[level] ?? 51;
+  removeNumbers(grid, holes);
+
   return { puzzle: grid, solution };
 }
+
+
 
 function fill(pos, g) {
   if (pos === 81) return true;
