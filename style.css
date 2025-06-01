@@ -11,13 +11,32 @@ input.cell:focus { outline: none; }
 
 body { font-family: sans-serif; text-align: center; }
 #timer { font: bold 32px/40px monospace; margin: 10px 0; }
-#board { border-collapse: collapse; margin: 0 auto 15px; }
+/* --- TABLA --- */
+#board {
+  border-collapse: separate;   /* Permite bordes distintos entre celdas  */
+  border-spacing: 0;           /* Sin huecos extra */
+  margin: 0 auto 15px;
+}
+
+/* --- CELDAS --- */
 #board td {
   width: 36px; height: 36px;
-  border: 1px solid #555;
+  border: 1px solid #555;      /* línea fina por defecto          */
   font: 24px/36px monospace;
   cursor: pointer;
 }
+
+/* --- LÍNEAS GRUESAS 3×3 --- */
+/* Borde superior de cada bloque de filas (y de la tabla)         */
+#board tr:nth-child(3n+1)  td { border-top:    3px solid #000; }
+/* Borde inferior de la tabla                                     */
+#board tr:last-child        td { border-bottom: 3px solid #000; }
+
+/* Borde izquierdo de cada bloque de columnas (y de la tabla)     */
+#board td:nth-child(3n+1)   { border-left:   3px solid #000; }
+/* Borde derecho de la tabla                                      */
+#board td:last-child        { border-right:  3px solid #000; }
+
 #board td.given { background:#eee; font-weight:bold; cursor:default; }
 #board td.invalid { background:#ffcccc; }
 button { padding: 8px 14px; font-size: 16px; }
